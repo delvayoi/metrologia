@@ -1,0 +1,30 @@
+calibracion:
+    path:     /
+    defaults: { _controller: "InstrumentacionBundle:Calibracion:index" }
+
+calibracion_show:
+    path:     /{id}/show
+    defaults: { _controller: "InstrumentacionBundle:Calibracion:show" }
+
+calibracion_new:
+    path:     /new
+    defaults: { _controller: "InstrumentacionBundle:Calibracion:new" }
+
+calibracion_create:
+    path:     /create
+    defaults: { _controller: "InstrumentacionBundle:Calibracion:create" }
+    requirements: { _method: post }
+
+calibracion_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "InstrumentacionBundle:Calibracion:edit" }
+
+calibracion_update:
+    path:     /{id}/update
+    defaults: { _controller: "InstrumentacionBundle:Calibracion:update" }
+    requirements: { _method: post|put }
+
+calibracion_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "InstrumentacionBundle:Calibracion:delete" }
+    requirements: { _method: post|delete }

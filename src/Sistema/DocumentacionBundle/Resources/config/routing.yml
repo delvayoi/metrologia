@@ -1,0 +1,55 @@
+documentacion_registros:
+    resource: "@DocumentacionBundle/Resources/config/routing/registros.yml"
+    prefix:   /registros
+
+documentacion_procedimiento:
+    resource: "@DocumentacionBundle/Resources/config/routing/procedimiento.yml"
+    prefix:   /procedimiento
+
+documentacion_instructiva:
+    resource: "@DocumentacionBundle/Resources/config/routing/instructiva.yml"
+    prefix:   /instructiva
+
+documentacion_estado:
+    resource: "@DocumentacionBundle/Resources/config/routing/estado.yml"
+    prefix:   /estado
+
+documentacion_area:
+    resource: "@DocumentacionBundle/Resources/config/routing/area.yml"
+    prefix:   /area
+
+#documentacion_homepage:
+#    path:     /hello/{name}
+#    defaults: { _controller: DocumentacionBundle:Default:index }
+      
+buscarprocedimiento:
+  path: /buscarpro
+  defaults: { _controller: DocumentacionBundle:Procedimiento:buscarprocedimiento }
+  
+buscarinstructiva:
+    path:  /buscarinst
+    defaults: { _controller: DocumentacionBundle:Instructiva:buscarinstructiva }
+
+buscarregistros:
+  path:  /buscarreg
+  defaults: { _controller: DocumentacionBundle:Registros:buscarregistros }
+
+ListRegistro:
+  path:   /{id}/Listados de registros
+  defaults: { _controller: DocumentacionBundle:Procedimiento:ListRegistro }
+
+CrearRegistro:
+  path:   /{id}/new
+  defaults: { _controller: DocumentacionBundle:Registros:new2 } 
+  
+CrearRegistro2:
+  path:   /{id}/crear
+  defaults: { _controller: DocumentacionBundle:Registros:CrearRegistro }  
+  
+ListPNODerogados:
+  path: /pno
+  defaults: { _controller: DocumentacionBundle:Procedimiento:ListPNODerogados }
+  
+ListINSDerogados:
+  path: /INS
+  defaults: { _controller: DocumentacionBundle:Instructiva:ListINSDerogados }

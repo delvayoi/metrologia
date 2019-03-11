@@ -1,0 +1,35 @@
+situacion:
+    pattern:  /
+    defaults: { _controller: "InstrumentacionBundle:Situacion:index" }
+
+situacion_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "InstrumentacionBundle:Situacion:show" }
+
+situacion_new:
+    pattern:  /new
+    defaults: { _controller: "InstrumentacionBundle:Situacion:new" }
+
+situacion_create:
+    pattern:  /create
+    defaults: { _controller: "InstrumentacionBundle:Situacion:create" }
+    requirements: { _method: post }
+
+situacion_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "InstrumentacionBundle:Situacion:edit" }
+
+situacion_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "InstrumentacionBundle:Situacion:update" }
+    requirements: { _method: post|put }
+
+situacion_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "InstrumentacionBundle:Situacion:delete" }
+    requirements: { _method: post|delete }
+    
+situacion_buscador:
+    pattern:  /Situacionbuscador
+    defaults: { _controller: "InstrumentacionBundle:Situacion:buscador" }
+    

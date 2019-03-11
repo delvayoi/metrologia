@@ -1,0 +1,31 @@
+  /**
+{% block phpdoc_method_header %}
+     * Find all {{ entity }} entities.
+{% endblock phpdoc_method_header %}
+     *
+{% block phpdoc_method_annotations %}
+{% if 'annotation' == format %}
+     * @Route("/buscador", name="{{ route_name_prefix }}_buscador")
+     * @Method("GET")
+     * @Template()
+{% endif %}
+{% endblock phpdoc_method_annotations %}
+     */
+{% block method_definition %}
+    public function buscadorAction()
+{% endblock method_definition %}
+    {
+{% block method_body %}
+        $peticion = $this->getRequest();
+
+        $id = $peticion->query->get('buscador');
+        $em=$this->getDoctrine()->getManager();
+        $entity = $em->getRepository('{{ bundle }}:{{ entity }}')->find($id);
+{% endblock method_body %}
+
+{% block method_return %}
+        return $this->redirect($this->generateUrl('{{ entity |lower }}_show', 
+        array('id' => $entity->getId())));  
+{% endblock method_return %}
+    }
+

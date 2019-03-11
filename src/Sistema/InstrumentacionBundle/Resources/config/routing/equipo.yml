@@ -1,0 +1,30 @@
+equipo:
+    path:     /
+    defaults: { _controller: "InstrumentacionBundle:Equipo:index" }
+
+equipo_show:
+    path:     /{id}/show
+    defaults: { _controller: "InstrumentacionBundle:Equipo:show" }
+
+equipo_new:
+    path:     /new
+    defaults: { _controller: "InstrumentacionBundle:Equipo:new" }
+
+equipo_create:
+    path:     /create
+    defaults: { _controller: "InstrumentacionBundle:Equipo:create" }
+    requirements: { _method: post }
+
+equipo_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "InstrumentacionBundle:Equipo:edit" }
+
+equipo_update:
+    path:     /{id}/update
+    defaults: { _controller: "InstrumentacionBundle:Equipo:update" }
+    requirements: { _method: post|put }
+
+equipo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "InstrumentacionBundle:Equipo:delete" }
+    requirements: { _method: post|delete }

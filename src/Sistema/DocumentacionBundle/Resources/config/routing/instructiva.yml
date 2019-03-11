@@ -1,0 +1,30 @@
+instructiva:
+    path:     /
+    defaults: { _controller: "DocumentacionBundle:Instructiva:index" }
+
+instructiva_show:
+    path:     /{id}/show
+    defaults: { _controller: "DocumentacionBundle:Instructiva:show" }
+
+instructiva_new:
+    path:     /new
+    defaults: { _controller: "DocumentacionBundle:Instructiva:new" }
+
+instructiva_create:
+    path:     /create
+    defaults: { _controller: "DocumentacionBundle:Instructiva:create" }
+    requirements: { _method: post }
+
+instructiva_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DocumentacionBundle:Instructiva:edit" }
+
+instructiva_update:
+    path:     /{id}/update
+    defaults: { _controller: "DocumentacionBundle:Instructiva:update" }
+    requirements: { _method: post|put }
+
+instructiva_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DocumentacionBundle:Instructiva:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,18 @@
+
+               
+
+                {%- for action in record_actions %}
+
+                  
+                        
+                        {% if action == 'show'%}
+                        <a href="{{ "{{ path('" ~ route_name_prefix ~ "_" ~ action ~ "', { 'id': entity.id }) }}" }}"   class="btn btn-sm btn-info"  >{{ action }}</a>
+                        {%- elseif action == 'edit' %}
+                        <a href="{{ "{{ path('" ~ route_name_prefix ~ "_" ~ action ~ "', { 'id': entity.id }) }}" }}"  class="btn btn-sm btn-primary"  >{{ action }}</a>
+                        {% endif %}
+                        
+                    
+
+                {%- endfor %}
+
+               

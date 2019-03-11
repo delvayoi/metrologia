@@ -1,0 +1,30 @@
+frecuenciacal:
+    path:     /
+    defaults: { _controller: "InstrumentacionBundle:Frecuenciacal:index" }
+
+frecuenciacal_show:
+    path:     /{id}/show
+    defaults: { _controller: "InstrumentacionBundle:Frecuenciacal:show" }
+
+frecuenciacal_new:
+    path:     /new
+    defaults: { _controller: "InstrumentacionBundle:Frecuenciacal:new" }
+
+frecuenciacal_create:
+    path:     /create
+    defaults: { _controller: "InstrumentacionBundle:Frecuenciacal:create" }
+    requirements: { _method: post }
+
+frecuenciacal_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "InstrumentacionBundle:Frecuenciacal:edit" }
+
+frecuenciacal_update:
+    path:     /{id}/update
+    defaults: { _controller: "InstrumentacionBundle:Frecuenciacal:update" }
+    requirements: { _method: post|put }
+
+frecuenciacal_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "InstrumentacionBundle:Frecuenciacal:delete" }
+    requirements: { _method: post|delete }

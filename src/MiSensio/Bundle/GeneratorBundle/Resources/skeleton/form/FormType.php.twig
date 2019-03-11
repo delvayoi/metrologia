@@ -1,0 +1,66 @@
+<?php
+
+namespace {{ namespace }}\Form{{ entity_namespace ? '\\' ~ entity_namespace : '' }};
+
+{% block use_statements %}
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+{% endblock use_statements %}
+
+{% block class_definition %}
+class {{ form_class }} extends AbstractType
+{% endblock class_definition %}
+{
+{% block class_body %}
+    {% if fields|length > 0 %}
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+        {% set cont = 0 %}
+        {% set cont2 = 0 %}
+        {%- for field in fields %}
+                       
+            {%- if type[cont] in ['date', 'datetime'] %}
+               
+               ->add('{{ field }}','date',array('widget'=>'single_text', 'format'=>'yyyy-MM-dd','attr'=>array('class'=>'form-control-inline input-medium date-picker','data-date-language'=>'es','size'=>16,)))
+               
+            {%- elseif  type[cont] in ['entity'] %} 
+               
+               ->add('{{ field }}','entity', array('class' => '{{datos[cont2][1]}}:{{datos[cont2][3]}}','mapped'=> true,'label' => '{{datos[cont2][3]}}','attr'=> array('class' => '{{datos[cont2][3]}}id_selector input-medium select2me','data-placeholder'=>'Select...',),))
+               {% set cont2 = cont2+1 %} 
+            {%- else %} 
+               
+               ->add('{{ field }}')
+               
+            {%- endif %}
+         {% set cont = cont+1 %}   
+        {%- endfor %}
+
+        ;
+    }
+    {% endif %}
+
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => '{{ namespace }}\Entity{{ entity_namespace ? '\\' ~ entity_namespace : '' }}\{{ entity_class }}'
+        ));
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return '{{ form_type_name }}';
+    }
+{% endblock class_body %}
+}

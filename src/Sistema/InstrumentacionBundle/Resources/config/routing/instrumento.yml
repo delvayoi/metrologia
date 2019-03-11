@@ -1,0 +1,35 @@
+instrumento:
+    pattern:  /
+    defaults: { _controller: "InstrumentacionBundle:Instrumento:index" }
+
+instrumento_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "InstrumentacionBundle:Instrumento:show" }
+
+instrumento_new:
+    pattern:  /new
+    defaults: { _controller: "InstrumentacionBundle:Instrumento:new" }
+
+instrumento_create:
+    pattern:  /create
+    defaults: { _controller: "InstrumentacionBundle:Instrumento:create" }
+    requirements: { _method: post }
+
+instrumento_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "InstrumentacionBundle:Instrumento:edit" }
+
+instrumento_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "InstrumentacionBundle:Instrumento:update" }
+    requirements: { _method: post|put }
+
+instrumento_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "InstrumentacionBundle:Instrumento:delete" }
+    requirements: { _method: post|delete }
+    
+instrumento_buscador:
+    pattern:  /Instrumentobuscador
+    defaults: { _controller: "InstrumentacionBundle:Instrumento:buscador" }
+    

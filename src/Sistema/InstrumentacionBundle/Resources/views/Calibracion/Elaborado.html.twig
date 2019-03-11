@@ -1,0 +1,71 @@
+{% extends'::base.html.twig' %}
+{% block javascripts %}
+{{ parent() }}
+<script> 
+    jQuery(document).ready(function() {       
+           // initiate layout and plugins
+           App.init();
+           ComponentsDropdowns.init();
+           ComponentsPickers.init();
+     });   
+</script>
+{% endblock %}
+{% block title %}Plan de Calibración {% endblock %}
+{% block body %}
+    <h1>Plan de Calibración</h1>    
+    {# {% set count=0 %}#}
+{% if result  %} 
+<table border="1" cellspacing="14">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Instrumento</th>
+                    <th>Código</th>
+                     <th>Rango</th> 
+                     <th>Modelo</th>
+                    <th>fecha Última</th>
+                    <th>fecha Próxima</th>
+                    <th>fecha Real</th>
+                </tr>
+            </thead>
+            <tbody>            
+           {% for result in result %}                       
+                <tr>
+                    <td >{{ result.id }}   </td>
+                    <td>{{ result.nombre }} </td> 
+                    <td>{{result.codigo }} </td> 
+                    <td>{{ result.rango}} </td> 
+                    <td>{{result.modelo }} </td>                 
+                  {#<td>{% if result.fechaultima %}  {{ result.fechaultima |date('Y-m-d ') }} {% endif%}</td>
+                    <td>{% if result.fechaproxima %} {{ result.fechaproxima |date('Y-m-d ') }} {% endif%}</td>           
+                    <td>{% if result.fechareal %}  {{ result.fechareal |date('Y-m-d ') }} {% endif%}</td>#}
+                </tr>        
+      {% endfor %} 
+   {% endif %}          
+     </tbody>
+    </table>    
+    <br><br>    
+      
+ 
+    <form action="{{ path('nueva' ) }}" method= "post"
+          enctype = "multipart/form-data">
+       fecha ultima
+       <input class="form-control-inline input-medium date-picker" type = "datetime" name = "fechaultima" value = "" /><br>
+  
+       fecha proxima
+       <input class="form-control-inline input-medium date-picker" type = "datetime" name = "fechaproxima" value = "" /><br>
+       fecha real
+       <input class="form-control-inline input-medium date-picker" type = "datetime" name = "fechareal" value = "" />
+       <input   type = "text" name = "id" value = "{{id}}" />
+       
+       <input type = "submit" name = "modificar" value="modificar fechas" />
+     
+         
+             </form>   
+         
+           listado ahora                    
+        </a>
+  {% endblock %}           
+           
+
+

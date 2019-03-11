@@ -1,0 +1,104 @@
+{% extends '::base.html.twig' %}
+{% block title %}Insertar procedimiento  {% endblock %}
+
+  {% block body %}   
+
+
+
+<div style="background: #2D5E7B; color: #fff;" class="center"> <h1>Creando procedimiento </h1></div>
+<table>
+    <tr>
+        <td colspan="3"  style="border: 0">                 
+                {{ form_start(form) }}
+                {{ form_errors(form) }} 
+        </td>
+    </tr>
+    <tr>
+        <td style="border: 0">
+                {{ form_label(form.nombre, 'Nombre') }}<font style="color: #e7191b">  *</font>
+        </td> 
+        
+        <td style="border: 0">
+                {{ form_label(form.codigo, 'Codigo') }}
+        </td>
+        
+        <td style="border: 0">
+                {{ form_label(form.estadoid, 'Estado') }}
+        </td> 
+            
+    </tr>
+    <tr>
+       
+        <td style="border: 0">            
+                {{ form_errors(form.nombre) }}                
+                {{ form_widget(form.nombre) }}
+        </td> 
+    
+    
+        <td style="border: 0">                            
+        {{ form_errors(form.codigo) }}
+        {{ form_widget(form.codigo) }}
+        </td>
+        
+        
+        <td style="border: 0">                            
+        {{ form_errors(form.estadoid) }}
+        {{ form_widget(form.estadoid) }}
+        </td> 
+        
+        
+    </tr>  
+    
+    
+     <tr>
+        <td style="border: 0">
+                {{ form_label(form.areaid, 'Area') }}
+        </td>
+        
+        <td style="border: 0">
+                {{ form_label(form.version, 'Version') }}
+        </td>
+        
+        <td style="border: 0">
+                {{ form_label(form.anno, 'Año') }}
+        </td>
+    
+         
+    </tr>
+     <tr>
+        
+        <td style="border: 0">            
+                
+        {{ form_errors(form.areaid) }}
+        {{ form_widget(form.areaid) }}
+        </td>
+        <td style="border: 0">            
+                
+        {{ form_errors(form.version) }}
+        {{ form_widget(form.version) }}
+        </td>
+        
+        <td style="border: 0">            
+               
+        {{ form_errors(form.anno) }}
+        {{ form_widget(form.anno) }}
+        </td>
+    </tr>
+    
+      
+    <tr>
+        <td style="border: 0">            
+               
+        </td>
+        <td style="border: 0">            
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+        </td>        
+    </tr> 
+</table>
+     
+        
+    {% endblock %}  
+
+
+

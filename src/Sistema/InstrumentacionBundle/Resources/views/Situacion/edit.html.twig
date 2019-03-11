@@ -1,0 +1,81 @@
+{% extends '::base.html.twig' %}
+{% block javascripts %}
+ {{ parent()}} 
+<script> 
+    jQuery(document).ready(function() {       
+           // initiate layout and plugins
+           App.init();
+           ComponentsDropdowns.init();
+           ComponentsPickers.init();
+          
+     });   
+ </script>    
+{% endblock %}
+{% block body -%}
+ 
+ <table>
+    <thead>      
+        <tr>
+            <th colspan="2" style="border: 0px">
+             <h1>Modificar Situacion</h1> 
+            </th>
+        </tr>     
+    </thead>
+ <tbody>  
+  {{ form_start(edit_form) }}
+  {{ form_errors(edit_form) }}           
+           <tr>
+        <td>
+           {{ form_label(edit_form.situaciones) }}
+        </td>
+        <td>
+             {{ form_errors(edit_form.situaciones) }}
+             {{ form_widget(edit_form.situaciones) }}
+        </td>
+     </tr>              
+       
+     <tr>          
+         <td style="border: 0px">                       
+              
+        </td>    
+         <td style="border: 0px">   
+            <table>
+                <tr>
+                    <td style="border: 0px">
+                        {{ form_widget(edit_form) }} 
+                        {{ form_end(edit_form) }} 
+                    </td>
+                    <td style="border: 0px">
+                                                <table> 
+   <tr>
+                     <td style="border: 0px">
+            {{ form(delete_form) }}
+         </td>      
+            </tr>  
+</table>  
+                    </td>    
+                </tr>    
+            </table>    
+        </td>
+      </tr> 
+      <tr>          
+          <td colspan="2" style="border: 0px">                        
+               <ul class="record_actions">
+   
+   <li>     <a href = "{{ path('situacion') }}"  >     
+            Atrás </a>
+   
+   </li>
+
+</ul>   
+   
+     
+          </td>    
+        
+      </tr>
+ <tbody> 
+</table> 
+
+   
+    
+{% endblock %}

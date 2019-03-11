@@ -1,0 +1,55 @@
+{% extends'::base.html.twig' %}
+{% block javascripts %}
+
+
+{% endblock %}
+{% block title %}Plan de Calibración {% endblock %}
+{% block body %}
+
+
+    <h1>Plan de Cali {{id}}</h1>
+    
+<table border="1" cellspacing="14">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Instrumento</th>
+                    <th>Código</th>
+                     <th>Rango</th> 
+                     <th>Modelo</th>
+                    <th>fecha Última</th>
+                    <th>fecha Próxima</th>
+                    <th>fecha Real</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+           {% for entities in entities %}                       
+                <tr>
+                    <td >{{ entities.id }}   </td>
+                    <td>{{ entities.nombre }} </td> 
+                  <td>{{ entities.codigo }} </td> 
+                   <td>{{ entities.rango }} </td> 
+                    <td>{{ entities.modelo }} </td> 
+                    
+               
+                </tr>              
+       
+      {% endfor %}                 
+        
+        
+     </tbody>
+    </table>    
+   
+  
+    <br><br>
+   
+
+      
+                       
+
+  {% endblock %}           
+           
+
+
+

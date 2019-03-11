@@ -1,0 +1,30 @@
+exactitud:
+    path:     /
+    defaults: { _controller: "InstrumentacionBundle:Exactitud:index" }
+
+exactitud_show:
+    path:     /{id}/show
+    defaults: { _controller: "InstrumentacionBundle:Exactitud:show" }
+
+exactitud_new:
+    path:     /new
+    defaults: { _controller: "InstrumentacionBundle:Exactitud:new" }
+
+exactitud_create:
+    path:     /create
+    defaults: { _controller: "InstrumentacionBundle:Exactitud:create" }
+    requirements: { _method: post }
+
+exactitud_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "InstrumentacionBundle:Exactitud:edit" }
+
+exactitud_update:
+    path:     /{id}/update
+    defaults: { _controller: "InstrumentacionBundle:Exactitud:update" }
+    requirements: { _method: post|put }
+
+exactitud_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "InstrumentacionBundle:Exactitud:delete" }
+    requirements: { _method: post|delete }

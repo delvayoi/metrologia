@@ -1,0 +1,4 @@
+services:
+#    documentacion.example:
+#        class: Sistema\DocumentacionBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

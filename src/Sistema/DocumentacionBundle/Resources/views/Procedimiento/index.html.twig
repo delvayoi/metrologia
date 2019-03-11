@@ -1,0 +1,140 @@
+{% extends '::base.html.twig' %}
+{%  block title %} Listados de procedimientos {% endblock %}
+{% block javascripts %}
+<script>
+
+ function Validar()
+        {
+             var procedimiento = $('#selectPro').val();
+             if(procedimiento == 0)
+                 {
+                     alert("Seleccione un procedimiento.");
+                     return false;
+                 }
+             $('#formprocede').submit();
+        }
+
+
+</script>
+
+
+{{ parent() }}
+<script> 
+    jQuery(document).ready(function() {       
+           // initiate layout and plugins
+           App.init();
+           ComponentsDropdowns.init();
+           ComponentsPickers.init();
+     });   
+</script>
+{% endblock %}
+
+{% block body %}
+
+<form id = "formprocede" action="{{ path ('buscarprocedimiento')  }}" method= "get" >
+<table>
+   <tr>
+      <td style="border :0">
+            <select id ="selectPro" class ="procedimientoid_selector input-medium select2me" name="procedimiento">
+               <option value="0" >Seleccione Procedimiento</option>               
+                            {% for entity in entities %}                                      
+                             <option value="{{ entity.id }}"> {{ entity.nombre }} </option>                                                    
+                            {% endfor %}     
+                    </select>                            
+                </td>             
+        <td style="border: 0">
+            <button type="button" onclick="Validar()">Buscar</button>  
+                </td>
+    </tr>            
+        
+</table>
+</form> 
+    <h1>Listados de procedimientos</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                 <th>Cantidad</th>
+                <th>Nombre</th>
+                <th>Codigo</th>
+                <th>Anno</th>
+                <th>Version</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+           {% set count=0 %}
+            
+        {% for entity in entities %}
+         
+    
+         {% if entity.estadoid.estado == 'derogado' %}
+              <tr style="color: red">
+                <td><a href="{{ path('procedimiento_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                
+               
+                 
+                
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.codigo }}</td>
+                <td>{% if entity.anno %}{{ entity.anno|date('YY') }}{% endif %}</td>
+                <td>{{ entity.version }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('procedimiento_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('procedimiento_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                    <li>                      
+                        <a href="{{ path('ListRegistro', { 'id': entity.id  }) }}">Registros({{ cantreg[count].cant }})</a>
+                                    
+                    </li>                    
+                </ul>
+                </td>
+            </tr>            
+         {% else %}
+            <tr>
+                <td><a href="{{ path('procedimiento_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>  
+               
+                               
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.codigo }}</td>
+                <td>{% if entity.anno %}{{ entity.anno|date('YY') }}{% endif %}</td>
+                <td>{{ entity.version }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('procedimiento_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('procedimiento_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                 
+                    <li>                       
+                        <a href="{{ path('ListRegistro', { 'id': entity.id  }) }}">Registros({{ cantreg[count].cant }})</a>
+                       
+                   </li>
+                    
+                    
+                   </ul>
+                </td>
+            </tr>
+           
+            
+         {% endif %}
+         
+            {% set count=count+1 %}            
+        {% endfor %}
+        </tbody>
+    </table>
+        <ul>
+        <li>
+            <a href="{{ path('procedimiento_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

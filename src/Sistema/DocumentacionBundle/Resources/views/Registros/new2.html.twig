@@ -1,0 +1,64 @@
+{% extends '::base.html.twig' %}
+{%  block title %} Insertar registro {% endblock %}
+{% block body %}
+   
+<form action="{{path('CrearRegistro' , { 'id': id }) }}" method="post"{{
+form_enctype(form) }}>
+     <table>
+    <tr>
+        
+      <td colspan="3" style="border: 0">
+                 <h1>Registros creation</h1>
+                {{ form_start(form) }}
+                {{ form_errors(form) }} 
+        </td>
+    </tr>
+    <tr>
+        <td style="border: 0">
+                {{ form_label(form.codigo, 'Codigo') }}
+        </td> 
+    
+        <td style="border: 0">            
+                {{ form_errors(form.codigo) }}                
+                {{ form_widget(form.codigo) }}
+        </td> 
+    </tr>
+ <tr>
+        <td style="border: 0">
+                {{ form_label(form.nombre, 'Nombre') }}
+        </td> 
+    
+        <td style="border: 0">            
+                {{ form_errors(form.nombre) }}
+                {{ form_widget(form.nombre) }}
+        </td> 
+    </tr>
+    <tr style="visibility: hidden">
+        <td style="border: 0">
+                {{ form_label(form.procedimientoid, 'Procedimiento') }}
+        </td> 
+    
+        <td style="border: 0">            
+                {{ form_errors(form.procedimientoid) }}
+                {{ form_widget(form.procedimientoid) }}
+        </td> 
+    </tr>
+    <tr>
+        <td style="border: 0">            
+               
+        </td>
+        <td style="border: 0">            
+                {{ form_widget(form) }}
+                
+        </td>        
+    </tr> 
+</table>
+</form>         
+<ul class="record_actions">           
+    <li>
+        <a href="{{ path('registros') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

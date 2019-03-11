@@ -1,0 +1,30 @@
+registros:
+    path:     /
+    defaults: { _controller: "DocumentacionBundle:Registros:index" }
+
+registros_show:
+    path:     /{id}/show
+    defaults: { _controller: "DocumentacionBundle:Registros:show" }
+
+registros_new:
+    path:     /new
+    defaults: { _controller: "DocumentacionBundle:Registros:new" }
+
+registros_create:
+    path:     /create
+    defaults: { _controller: "DocumentacionBundle:Registros:create" }
+    requirements: { _method: post }
+
+registros_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DocumentacionBundle:Registros:edit" }
+
+registros_update:
+    path:     /{id}/update
+    defaults: { _controller: "DocumentacionBundle:Registros:update" }
+    requirements: { _method: post|put }
+
+registros_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DocumentacionBundle:Registros:delete" }
+    requirements: { _method: post|delete }

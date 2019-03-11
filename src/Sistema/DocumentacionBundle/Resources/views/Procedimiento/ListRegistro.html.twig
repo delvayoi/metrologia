@@ -1,0 +1,44 @@
+{# empty Twig template #}
+{% extends '::base.html.twig' %}  
+{%  block title %} Insertar registro {% endblock %}
+{% block body %}
+
+       {% for type, flashMessage in app.session.flashbag.all() %}
+    
+        {% if flashMessage.title is defined %}
+        <strong>{{ flashMessage.title }}</strong>
+        {{ flashMessage.message }}
+        {% else %}
+        
+        {{ type }}
+        
+        {% endif %} 
+        
+    {% endfor %}
+        
+   <form action= " {{ path('CrearRegistro', {'id': id }) }}"  method = "POST" enctype = "multipart/form-data">    
+     <table class="records_list">
+        <thead>
+            <tr>        
+               <th> <h3>Codigo</h3></th>
+               <th><h3>Nombre</h3></th>
+              
+            </tr>       
+      </thead>
+    <tbody>       
+      {% for form in form %}  
+          <tr>                
+               <td>{{ form.codigo }} </td>           
+               <td> {{ form.nombre }}</td>
+          </tr>  
+      
+      {% endfor %} 
+     </form>          
+      </tbody>
+         </table>       
+            <ul>
+                <li>             
+                  <input type = "submit" value = "Insertar Registro"   name = "button1" />
+               </li>         
+            </ul>
+{% endblock %}

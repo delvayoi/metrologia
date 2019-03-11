@@ -1,0 +1,26 @@
+reportes_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: ReportesBundle:Default:index }
+    
+
+repProcDerogados:
+    pattern:  /repProcDerogados
+    defaults: { _controller: ReportesBundle:Default:repProcDerogados }    
+
+
+repProcedimiento:   
+    path: /repProcedimiento
+    defaults: { _controller: ReportesBundle:Default:repProcedimiento  }
+  
+repProcedimientoAll:
+  path:  /repProcedimientoAll
+  defaults: { _controller: ReportesBundle:Default:repProcedimientoAll }
+  
+
+repInstructiva:
+  path:  /repInstructiva
+  defaults: { _controller: ReportesBundle:Default:repInstructiva }
+  
+repInstructivaAll:
+  path:  /repInstructivaAll
+  defaults: { _controller: ReportesBundle:Default:repInstructivaAll }

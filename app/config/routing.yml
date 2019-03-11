@@ -1,0 +1,28 @@
+instrumentacion:
+    resource: "@InstrumentacionBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+
+reportes:
+    resource: "@ReportesBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+documentacion:
+    resource: "@DocumentacionBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+index:
+   path:  /
+   defaults: { _controller: DocumentacionBundle:Default:index }  
+
+
+#app:
+#    resource: @AppBundle/Controller/
+#    type:     annotation
+
+

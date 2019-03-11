@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block javascripts %}
+{{ parent() }}
+<script> 
+    jQuery(document).ready(function() {       
+           // initiate layout and plugins
+           App.init();
+           ComponentsDropdowns.init();
+           ComponentsPickers.init();
+     });   
+</script>
+{% endblock %}
+
+{% block body %}
+ <form id = "formcliente" action=" {{ path('repInstructivaAll')}}" method="get" > 
+<table>
+ <tr>   
+    <td style="border: 0">
+         <select id = "selectestado"  name="estado" class="estadoid_selector input-medium select2me" >
+            <option value="0" >Seleccione estado</option> 
+            {% for entity in entities %}  
+               <option value="{{ entity.id}}">{{entity.estado}} </option>
+
+               {% endfor %} 
+ 
+         </select>    
+    </td>   
+</tr>
+ 
+ <tr>   
+    <td style="border: 0">
+        <input type = "submit" value = "buscar" name = "boton"   />  
+    </td>   
+</tr>
+
+</table>
+</form>
+
+{% endblock %}

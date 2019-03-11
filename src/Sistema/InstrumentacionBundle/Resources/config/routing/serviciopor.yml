@@ -1,0 +1,30 @@
+serviciopor:
+    path:     /
+    defaults: { _controller: "InstrumentacionBundle:Serviciopor:index" }
+
+serviciopor_show:
+    path:     /{id}/show
+    defaults: { _controller: "InstrumentacionBundle:Serviciopor:show" }
+
+serviciopor_new:
+    path:     /new
+    defaults: { _controller: "InstrumentacionBundle:Serviciopor:new" }
+
+serviciopor_create:
+    path:     /create
+    defaults: { _controller: "InstrumentacionBundle:Serviciopor:create" }
+    requirements: { _method: post }
+
+serviciopor_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "InstrumentacionBundle:Serviciopor:edit" }
+
+serviciopor_update:
+    path:     /{id}/update
+    defaults: { _controller: "InstrumentacionBundle:Serviciopor:update" }
+    requirements: { _method: post|put }
+
+serviciopor_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "InstrumentacionBundle:Serviciopor:delete" }
+    requirements: { _method: post|delete }

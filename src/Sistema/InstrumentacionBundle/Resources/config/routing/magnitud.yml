@@ -1,0 +1,30 @@
+magnitud:
+    path:     /
+    defaults: { _controller: "InstrumentacionBundle:Magnitud:index" }
+
+magnitud_show:
+    path:     /{id}/show
+    defaults: { _controller: "InstrumentacionBundle:Magnitud:show" }
+
+magnitud_new:
+    path:     /new
+    defaults: { _controller: "InstrumentacionBundle:Magnitud:new" }
+
+magnitud_create:
+    path:     /create
+    defaults: { _controller: "InstrumentacionBundle:Magnitud:create" }
+    requirements: { _method: post }
+
+magnitud_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "InstrumentacionBundle:Magnitud:edit" }
+
+magnitud_update:
+    path:     /{id}/update
+    defaults: { _controller: "InstrumentacionBundle:Magnitud:update" }
+    requirements: { _method: post|put }
+
+magnitud_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "InstrumentacionBundle:Magnitud:delete" }
+    requirements: { _method: post|delete }

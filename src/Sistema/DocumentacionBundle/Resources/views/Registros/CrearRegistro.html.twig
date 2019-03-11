@@ -1,0 +1,47 @@
+{# empty Twig template #}
+{% extends '::base.html.twig' %}
+{% block body %}
+<form action="{{path('CrearRegistro' , { 'id': id }) }}" method="post"
+
+form_enctype(formulario) }}> 
+         {{  form_errors(formulario)}}
+         
+         <fieldset>
+         
+            <legend>Datos generales</legend>
+            <div>
+               <strong>
+                  {{ form_label(formulario.nombre)}}
+               </strong>
+                  <div class="error">{{ form_errors(formulario.nombre)}}</div>
+                  <span>{{ form_widget(formulario.nombre)}}</span>
+            </div>              
+            <div>
+               <strong>
+                  {{ form_label(formulario.codigo)}}
+               </strong>
+                  <div class="error">{{ form_errors(formulario.codigo)}}</div>
+                  <span>{{ form_widget(formulario.codigo)}}</span>
+            </div>
+            
+            <div>
+               <strong>
+                  {{ form_label(formulario.procedimientoid)}}
+               </strong>
+                  <div class="error">{{ form_errors(formulario.procedimientoid)}}</div>
+                  <span>{{ form_widget(formulario.procedimientoid)}}</span>
+            </div>
+                    
+            
+            
+              
+         
+         </fieldset> 
+         
+         
+         
+         
+         <input class="boton" type="submit" value="Insertar"/>
+</form>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+ {# empty Twig template #}
+
+{% extends '::base.html.twig' %}
+{% block body %}
+{% if resultado %} 
+<table>
+    <thead>
+        <tr>
+            <th><h3> Nombre</h3></th>
+            <th><h3> Codigo</h3></th> 
+            <th><h3> Año</h3></th> 
+            <th><h3> Versión</h3></th> 
+            <th><h3> Estado</h3></th> 
+            
+        </tr>        
+    </thead>
+    <tbody>
+        
+    {% for entity in resultado %} 
+           
+            <tr>
+                <td>{{ entity.nombre }}</td> 
+                <td>{{ entity.codigo }}</td>            
+                <td>{{ entity.anno |date('Y-m-d') }}</td>
+                <td>{{ entity.version }}</td>
+                <td>{{ entity.estado }}</td>
+                
+                
+            </tr>
+            
+          
+            
+    {% endfor %}
+           
+    </tbody>
+</table>
+{% endif %}
+{%endblock%}

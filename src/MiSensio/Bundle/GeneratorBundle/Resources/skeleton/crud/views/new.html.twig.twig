@@ -1,0 +1,59 @@
+{% block extends %}
+{{ "{% extends '::base.html.twig' %}" }}
+{% endblock extends %}
+{{"{% block javascripts %}"}}
+{{" {{ parent()}} "}}
+<script> 
+    jQuery(document).ready(function() {       
+           // initiate layout and plugins
+           App.init();
+           ComponentsDropdowns.init();
+           ComponentsPickers.init();
+          
+     });   
+ </script>    
+{{ "{% endblock %}" }}
+{% block body %}
+{{ "{% block body -%}" }}
+<table> 
+    <thead>
+        <th colspan="2" style="border: 0px">
+            <h1>Crear {{ entity }}</h1>
+        </th>    
+    </thead>
+    <tbody>
+    
+  {{ '{{ form_start(form) }}' }}
+  {{ '{{ form_errors(form) }}' }}  
+               
+                {% for field in fields %}
+             <tr>
+                <td>
+                        {{ '{{ form_label(form.'~field~') }}' }}
+                </td>
+                <td>
+                        {{ '{{ form_errors(form.'~field~') }}' }}
+                        {{ '{{ form_widget(form.'~field~') }}' }}
+                </td>
+              </tr>                
+                {% endfor %}   
+               <tr>
+                <td style="border: 0px">
+                      
+                </td>
+                <td style="border: 0px">  
+                     {{ '{{ form_widget(form) }}' }} 
+                    {{ '{{ form_end(form) }}' }}  
+                </td>
+              </tr>
+              <tr>
+                  <td colspan="2" style="border: 0px">
+                    {% set hide_edit, hide_delete = true, true %}
+                    {% include 'crud/views/others/atras_actions.html.twig.twig' %}   
+                </td>
+                
+              </tr>
+      </tbody>
+    </table>
+ {{ "{% endblock %}" }}
+{% endblock body %}

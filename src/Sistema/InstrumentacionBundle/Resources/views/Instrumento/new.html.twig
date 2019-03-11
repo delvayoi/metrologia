@@ -1,0 +1,134 @@
+{% extends '::base.html.twig' %}
+{% block javascripts %}
+ {{ parent()}} 
+<script> 
+    jQuery(document).ready(function() {       
+           // initiate layout and plugins
+           App.init();
+           ComponentsDropdowns.init();
+           ComponentsPickers.init();
+          
+     });   
+ </script>    
+{% endblock %}
+{% block body -%}
+<table> 
+    <thead>
+        <th colspan="2" style="border: 0px">
+            <h1>Crear Instrumento</h1>
+        </th>    
+    </thead>
+    <tbody>
+    
+  {{ form_start(form) }}
+  {{ form_errors(form) }}  
+               
+                             <tr>
+                <td>
+                        {{ form_label(form.nombre) }}
+                </td>
+                <td>
+                        {{ form_errors(form.nombre) }}
+                        {{ form_widget(form.nombre) }}
+                </td>
+              </tr>                
+                             <tr>
+                <td>
+                        {{ form_label(form.codigo) }}
+                </td>
+                <td>
+                        {{ form_errors(form.codigo) }}
+                        {{ form_widget(form.codigo) }}
+                </td>
+              </tr>                
+                             <tr>
+                <td>
+                        {{ form_label(form.rango) }}
+                </td>
+                <td>
+                        {{ form_errors(form.rango) }}
+                        {{ form_widget(form.rango) }}
+                </td>
+              </tr>                
+                             <tr>
+                <td>
+                        {{ form_label(form.modelo) }}
+                </td>
+                <td>
+                        {{ form_errors(form.modelo) }}
+                        {{ form_widget(form.modelo) }}
+                </td>
+              </tr>                
+                             <tr>
+                <td>
+                        {{ form_label(form.situacionid) }}
+                </td>
+                <td>
+                        {{ form_errors(form.situacionid) }}
+                        {{ form_widget(form.situacionid) }}
+                </td>
+              </tr>                
+                             <tr>
+                <td>
+                        {{ form_label(form.magnitudid) }}
+                </td>
+                <td>
+                        {{ form_errors(form.magnitudid) }}
+                        {{ form_widget(form.magnitudid) }}
+                </td>
+              </tr>                
+                             <tr>
+                <td>
+                        {{ form_label(form.areaid) }}
+                </td>
+                <td>
+                        {{ form_errors(form.areaid) }}
+                        {{ form_widget(form.areaid) }}
+                </td>
+              </tr>                
+                             <tr>
+                <td>
+                        {{ form_label(form.exactitudid) }}
+                </td>
+                <td>
+                        {{ form_errors(form.exactitudid) }}
+                        {{ form_widget(form.exactitudid) }}
+                </td>
+              </tr>                
+                             <tr>
+                <td>
+                        {{ form_label(form.equipoid) }}
+                </td>
+                <td>
+                        {{ form_errors(form.equipoid) }}
+                        {{ form_widget(form.equipoid) }}
+                </td>
+              </tr>                
+                   
+               <tr>
+                <td style="border: 0px">
+                      
+                </td>
+                <td style="border: 0px">  
+                     {{ form_widget(form) }} 
+                    {{ form_end(form) }}  
+                </td>
+              </tr>
+              <tr>
+                  <td colspan="2" style="border: 0px">
+                                        <ul class="record_actions">
+   
+   <li>     <a href = "{{ path('instrumento') }}"  >     
+            Atrás </a>
+   
+   </li>
+
+</ul>   
+   
+      
+                </td>
+                
+              </tr>
+      </tbody>
+    </table>
+ {% endblock %}

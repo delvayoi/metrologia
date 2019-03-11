@@ -1,0 +1,60 @@
+instrumentacion_situacion:
+    resource: "@InstrumentacionBundle/Resources/config/routing/situacion.yml"
+    prefix:   /situacion
+
+instrumentacion_serviciopor:
+    resource: "@InstrumentacionBundle/Resources/config/routing/serviciopor.yml"
+    prefix:   /serviciopor
+
+instrumentacion_magnitud:
+    resource: "@InstrumentacionBundle/Resources/config/routing/magnitud.yml"
+    prefix:   /magnitud
+
+instrumentacion_instrumento:
+    resource: "@InstrumentacionBundle/Resources/config/routing/instrumento.yml"
+    prefix:   /instrumento
+
+instrumentacion_frecuenciacal:
+    resource: "@InstrumentacionBundle/Resources/config/routing/frecuenciacal.yml"
+    prefix:   /frecuenciacal
+
+instrumentacion_exactitud:
+    resource: "@InstrumentacionBundle/Resources/config/routing/exactitud.yml"
+    prefix:   /exactitud
+
+instrumentacion_equipo:
+    resource: "@InstrumentacionBundle/Resources/config/routing/equipo.yml"
+    prefix:   /equipo
+
+instrumentacion_calibracion:
+    resource: "@InstrumentacionBundle/Resources/config/routing/calibracion.yml"
+    prefix:   /calibracion
+
+instrumentacion_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: InstrumentacionBundle:Default:index }
+
+elaborarplan:
+    path:   /ll
+    defaults: { _controller: InstrumentacionBundle:Calibracion:elaborarplan }
+    
+buscar_magnitudes:
+  path:   /buscarm
+  defaults: { _controller: InstrumentacionBundle:Calibracion:buscar_magnitudes }
+  
+Insertar_instrumento:
+  path: /Instr
+  defaults: { _controller: InstrumentacionBundle:Default:ver } 
+  
+Elaborado:
+  path: /el
+  defaults: { _controller: InstrumentacionBundle:Calibracion:Elaborado }
+  
+nueva:
+   path: /oof
+   defaults: { _controller: InstrumentacionBundle:Calibracion:nueva }   
+  
+BuscarBajasInstrumento:
+    path:  /bajas
+    defaults: {  _controller: InstrumentacionBundle:Instrumento:BuscarBajasInstrumento }
+    

@@ -1,0 +1,72 @@
+{% block extends %}
+{{ "{% extends '::base.html.twig' %}" }}
+{% endblock extends %}
+{{"{% block javascripts %}"}}
+{{" {{ parent()}} "}}
+<script> 
+    jQuery(document).ready(function() {       
+           // initiate layout and plugins
+           App.init();
+           ComponentsDropdowns.init();
+           ComponentsPickers.init();
+          
+     });   
+ </script>    
+{{ "{% endblock %}" }}
+{% block body %}
+{{ "{% block body -%}" }}
+ 
+ <table>
+    <thead>      
+        <tr>
+            <th colspan="2" style="border: 0px">
+             <h1>Modificar {{ entity }}</h1> 
+            </th>
+        </tr>     
+    </thead>
+ <tbody>  
+  {{ '{{ form_start(edit_form) }}' }}
+  {{ '{{ form_errors(edit_form) }}' }}           
+      {% for field in fields %}
+     <tr>
+        <td>
+           {{ '{{ form_label(edit_form.'~field~') }}' }}
+        </td>
+        <td>
+             {{ '{{ form_errors(edit_form.'~field~') }}' }}
+             {{ '{{ form_widget(edit_form.'~field~') }}' }}
+        </td>
+     </tr>              
+    {% endfor %}   
+     <tr>          
+         <td style="border: 0px">                       
+              
+        </td>    
+         <td style="border: 0px">   
+            <table>
+                <tr>
+                    <td style="border: 0px">
+                        {{ '{{ form_widget(edit_form) }}' }} 
+                        {{ '{{ form_end(edit_form) }}' }} 
+                    </td>
+                    <td style="border: 0px">
+                        {% set hide_edit, hide_delete = true, false %}
+                        {% include 'crud/views/others/record_actions.html.twig.twig' %} 
+                    </td>    
+                </tr>    
+            </table>    
+        </td>
+      </tr> 
+      <tr>          
+          <td colspan="2" style="border: 0px">                        
+               {% include 'crud/views/others/atras_actions.html.twig.twig' %}  
+          </td>    
+        
+      </tr>
+ <tbody> 
+</table> 
+
+   
+    
+{{ "{% endblock %}" }}
+{% endblock body %}

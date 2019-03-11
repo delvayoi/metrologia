@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html>
+  
+      <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+   
+  
+    
+     <title> {% block title %}   {% endblock%} </title>
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="{{ asset('public/style.css')}}  " media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="{{ asset('public/style.ie7.css') }}" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="{{ asset('public/style.responsive.css') }}" media="all">
+    <script src="{{ asset('public/jquery.js') }}"></script>
+    <script src="{{ asset('public/script.js') }}"></script>
+    <script src="{{ asset('public/script.responsive.js') }}"></script> 
+    
+     
+   
+
+    
+    <style>.art-content .art-postcontent-0 .layout-item-0 { margin-top: 10px;  }
+      .art-content .art-postcontent-0 .layout-item-1 { padding-right: 10px;padding-left: 10px;  }
+      .art-content .art-postcontent-0 .layout-item-2 { margin-top: 10px;margin-bottom: 10px;margin-left: 10px;  }
+      .art-content .art-postcontent-0 .layout-item-3 { border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;border-top-color:#E3E3E3;border-right-color:#E3E3E3;border-bottom-color:#E3E3E3;border-left-color:#E3E3E3; padding-right: 10px;padding-left: 10px;  }
+      .ie7 .art-post .art-layout-cell {border:none !important; padding:0 !important; }
+      .ie6 .art-post .art-layout-cell {border:none !important; padding:0 !important; }   
+   </style>
+
+   
+    <link href="{{ asset('bundles/documentacion/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/documentacion/css/uniform.default.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/documentacion/css/bootstrap-select.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/documentacion/css/select2.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/documentacion/css/select2-metronic.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/documentacion/css/style-metronic.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/documentacion/css/style.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/documentacion/css/style-responsive.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/documentacion/css/plugins.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/documentacion/css/default.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/documentacion/css/custom.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/documentacion/css/datepicker.css') }}" rel="stylesheet" type="text/css">
+    
+   
+
+
+</head>
+   
+<body>
+      <div id="art-main">
+      <div id="art-header-bg" class="clearfix"> </div>
+      <div id="art-hmenu-bg" class="art-bar art-nav clearfix"></div>
+      <div class="art-sheet clearfix">
+
+
+
+
+   <header class="art-header clearfix">
+    <div class="art-shapes">
+   <div class="art-object1115039570" data-left="94.35%"></div>
+
+            </div>
+        <h1 class="art-headline" data-left="2.17%">
+         <a href="#">Sistema de</a>
+       </h1>
+         <h2 class="art-slogan" data-left="8.84%">Gestión Metrológica</h2>
+                <div id="art-flash-area">
+                    <div id="art-flash-container">
+                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1727" height="431" id="art-flash-object">
+                        <param name="movie" value="images/flash.swf">
+                        <param name="quality" value="high">
+                    	<param name="scale" value="exactfit">
+                    	<param name="wmode" value="transparent">
+                    	<param name="flashvars" value="color1=0xFFFFFF&amp;alpha1=.40&amp;framerate1=24&amp;loop=true&amp;wmode=transparent">
+                        <param name="swfliveconnect" value="true">
+                        <!--[if !IE]>-->
+                        <object type="application/x-shockwave-flash" data="images/flash.swf" width="1727" height="431">
+                            <param name="quality" value="high">
+                    	    <param name="scale" value="exactfit">
+                            <param name="wmode" value="transparent">
+                                                    	    <param name="flashvars" value="color1=0xFFFFFF&amp;alpha1=.40&amp;framerate1=24&amp;loop=true&amp;wmode=transparent">
+                            <param name="swfliveconnect" value="true">
+                        <!--<![endif]-->
+                          
+                        <!--[if !IE]>-->
+                        </object>
+                        <!--<![endif]-->
+                    </object>
+                    </div>
+                    </div>
+ 
+  <nav class="art-nav clearfix">
+  <div class="art-nav-inner">
+  <ul class="art-hmenu">
+      
+      
+      
+  <li> <a href="{{path('index')}}">Inicio</a></li>  
+  {#<input type="button" value="Cancelar" onclick="history.go(-1)" />#}
+  
+  
+  
+  <li><a>Documentacion</a>
+      <ul>
+         <li><a>Procedimiento</a>    
+           <ul>     
+               <li><a href="{{path ('procedimiento_new') }}"> Insertar procedimiento </a> </li>
+               <li><a href="{{path ('procedimiento') }}"> Listar procedimiento </a> </li>
+           </ul>    
+           <li><a>Instructiva</a>    
+               <ul>       
+                  <li><a href="{{path ('instructiva_new') }}"> Insertar Instructiva </a> </li>
+                  <li><a href="{{path ('instructiva') }}"> Listados Instructiva </a> </li>
+             </ul>
+           </li>    
+           <li><a>Registros</a>    
+               <ul>       
+                  <li><a href="{{path ('registros_new') }}"> Insertar Registros </a> </li>
+                  <li><a href="{{path ('registros') }}"> Listados Registros </a> </li>
+               </ul>
+           </li>
+           <li>_____________ </li>
+           <li><a>Listado Procedimientos Derogados</a>    
+               <ul>       
+                  <li><a href="{{path ('ListPNODerogados') }}"> Ver </a> </li>
+                 
+               </ul>
+           </li>
+           <li><a>Listado Instructivas Derogados</a>    
+               <ul>       
+                  <li><a href="{{path ('ListINSDerogados') }}"> Ver </a> </li>
+                  
+               </ul>
+           </li>
+      </ul>         
+  <li><a>Instrumentacion</a>   
+          <ul>
+              <li><a>Instrumentos</a>
+                 <ul>
+                    <li><a href="{{path ('instrumento_new') }}"> Insertar instrumentos </a> </li>
+                    <li><a href="{{path ('instrumento') }}"> Listar instrumentos </a> </li>
+                     <li><a href="{{path ('BuscarBajasInstrumento') }}">Instrumentos dado de baja</a> </li>
+                 </ul>
+              </li> 
+     
+          </ul> 
+          <li><a>Plan de Calibracion</a>
+              <ul>    
+                      
+                  <li><a href="{{path ('calibracion_new') }}"> Insertar(Plan Calibración) </a> </li>
+                  <li><a href="{{path ('calibracion') }}"> Listar(Plan Calibración)</a> </li>
+                   <li><a href="{{path ('elaborarplan') }}"> Elaborar(Plan Calibración)</a> </li>
+              </ul>
+          </li>
+          <li><a>Reportes</a>
+               <ul> 
+                  
+                  <li> <a> reporte </a> </li>
+                   <li> <a>reporte    </a> </li>
+                    <li> <a>reporte    </a> </li>
+                  
+        {#   <li><a href="{{path ('repProcedimiento') }}">Busqueda en Procedimiento</a> </li>  #}
+          {#   <li><a href="{{path ('repInstructiva') }}">Busqueda en Instructiva</a> </li>  #}
+          {# <li><a href="{{path ('repProcDerogados') }}"> Procedimiento derogados</a> </li> #}              
+               </ul> 
+          </li>
+            <li><a>Nomenclatura</a>         
+               <ul>
+                  <li><a>Documentacion</a>
+                     <ul>
+                         <li><a>Area</a>
+                           <ul>
+                              <li><a href="{{path ('area_new') }}"> Insertar areas </a></li>
+                              <li><a href="{{path ('area') }}"> Listar areas </a></li>
+                           </ul>
+                          </li> 
+                          <li><a>Estado</a>
+                              <ul>
+                                <li><a href="{{path ('estado_new') }}"> Insertar estado </a></li>
+                                <li><a href="{{path ('estado') }}"> Listar estado </a></li>
+                              </ul>
+                           </li>    
+                              </ul>                   
+                             <li><a>Instrumentacion</a>
+                                 <ul>
+                                    <li><a>Equipo</a>
+                                 <ul>
+                                    <li><a href="{{path ('equipo_new') }}"> Insertar equipo</a></li>
+                                    <li><a href="{{path ('equipo') }}"> Listar equipo</a></li>
+                                 </ul>
+                                 </li> 
+                                 <li><a>Estado de Calibracion</a>
+                                    <ul>
+                                       <li><a href="{{path ('calibracion_new') }}">Insertar(est. calibración)</a></li>
+                                       <li><a href="{{path ('calibracion') }}"> Listar(est. calibración)</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a>Frecuencia de Calibracion</a>
+                                    <ul>
+                                       <li><a href="{{path ('frecuenciacal_new') }}">Insertar(Frec. calibración) </a> </li>
+                                       <li><a href="{{path ('frecuenciacal') }}"> Listar(Frec. calibración) </a> </li>
+                                    </ul>
+                                 </li>
+                                 <li><a>Magnitud</a>
+                                    <ul>
+                                       <li><a href="{{path ('magnitud_new') }}">Insertar magnitud </a> </li>
+                                       <li><a href="{{path ('magnitud') }}"> Listar magnitud </a> </li>
+                                    </ul>
+                                 </li>
+                                 <li><a>Presicion</a>
+                                    <ul>
+                                       <li><a href="{{path ('exactitud_new') }}">Insertar presición </a> </li>
+                                       <li><a href="{{path ('exactitud') }}"> Listar presición </a> </li>
+                                    </ul>
+                                 </li>
+                                 <li><a>Serv. realizado por</a>
+                                    <ul>
+                                       <li><a href="{{path ('serviciopor_new') }}"> Insertar (serv. realizado por)</a> </li>
+                                       <li><a href="{{path ('serviciopor') }}"> Listar (serv. realizado por)</a> </li>
+                                    </ul>
+                                 </li>  
+                              </ul>                        
+                              <li><a>Plan De calibración()Revisar</a>
+                                 <ul>
+                                     <li><a href="{{path ('instrumento_new') }}"> Insertar(plan calibración) </a> </li>
+                                     <li><a href="{{path ('instrumento') }}"> Listar(plan calibración) </a> </li>
+                              </ul>
+                           </li> 
+                           </ul>                         
+                              <li><a href="ayuda.html">Ayuda</a></li>
+                              <li><a href="contactos.html">Contactos</a></li>
+                              <li><a href="noticias.html">Noticias</a></li>
+                        </ul>
+                  </div>
+            </nav>                    
+</header>
+<div class="art-layout-wrapper clearfix">
+                <div class="art-content-layout">
+
+       <center> {% block body%}                    {% endblock %}  </center>  
+</div> 
+</div>
+
+
+<footer class="art-footer clearfix">
+  <div class="art-footer-inner">
+<div style="position:relative;display:inline-block;padding-left:40px;padding-right:40px"><a title="RSS" class="art-rss-tag-icon" style="position: absolute; bottom: -10px; left: -6px; line-height: 32px;" href="#"></a><p><br>Pede diam auctor faucibus nostra massa.<br><br></p></div>
+    <p class="art-page-footer">
+        <span id="art-footnote-links"><a href="http://www.artisteer.com/" target="_blank">Web Template</a> created with Artisteer.</span>
+    </p>
+  </div>
+</footer>
+
+   
+
+
+{% block javascripts %}               
+      
+      
+          <script src="{{ asset('bundles/documentacion/js/jquery.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/obhighcharts/js/highcharts/highcharts.js') }}"></script>
+          <script src="{{ asset('bundles/obhighcharts/js/highcharts/modules/exporting.js') }}"></script>
+          <script src="{{ asset('bundles/documentacion/js/jquery-1.10.2.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/jquery-migrate-1.2.1.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/bootstrap.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/bootstrap2-typeahead.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/bootstrap-hover-dropdown.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/jquery.blockui.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/jquery.cokie.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/jquery.uniform.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/bootstrap-select.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/select2.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/jquery.multi-select.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/app.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/components-dropdowns.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/bootstrap-datepicker.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/components-pickers.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/locales/bootstrap-datepicker.es.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/jquery.validate.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/additional-methods.min.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/form-validation.js') }}" type="text/javascript"></script>
+          <script src="{{ asset('bundles/documentacion/js/messages_es.js') }}" type="text/javascript"></script>
+          
+    
+      
+                
+                
+         
+        
+          {% endblock %}
+</body>
+
+      
+      
+      </html>

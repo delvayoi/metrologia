@@ -1,0 +1,65 @@
+{% extends '::plantilla2.html.twig' %}
+  
+{%  block title %}                {% endblock  %}
+{% block  body %}  
+    <h1>Area list</h1>
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Area</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>            
+        {% for entity in entities %}     
+            <tr>
+                <td><a href="{{ path('area_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+               <td > {{ entity.area }} </td>                
+                <td>                 
+                <ul>
+                    <li>
+                        <a href="{{ path('area_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('area_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>                  
+           {% endfor %}     
+         </tbody>
+    </table>
+        <ul>
+        <li>
+            <a href="{{ path('area_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>           
+    {% endblock %}  
+{% block javascript %}      
+    <script type="text/javascript">   
+    Ext.define('MyApp.Application', {
+    name: 'MyApp',
+    extend: 'Ext.app.Application',
+    launch: function() {
+        Ext.create('Ext.container.Viewport', {
+            layout: 'fit',
+            items: [
+                {
+                    title: 'Hello Ext',
+                    html : 'Hello! Welcome to Ext JS.'
+                }
+            ]
+        });
+    }
+});
+    </script>
+{% endblock %}
+
+      
+             
+
+
+

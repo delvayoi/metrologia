@@ -1,0 +1,30 @@
+estado:
+    path:     /
+    defaults: { _controller: "DocumentacionBundle:Estado:index" }
+
+estado_show:
+    path:     /{id}/show
+    defaults: { _controller: "DocumentacionBundle:Estado:show" }
+
+estado_new:
+    path:     /new
+    defaults: { _controller: "DocumentacionBundle:Estado:new" }
+
+estado_create:
+    path:     /create
+    defaults: { _controller: "DocumentacionBundle:Estado:create" }
+    requirements: { _method: post }
+
+estado_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DocumentacionBundle:Estado:edit" }
+
+estado_update:
+    path:     /{id}/update
+    defaults: { _controller: "DocumentacionBundle:Estado:update" }
+    requirements: { _method: post|put }
+
+estado_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DocumentacionBundle:Estado:delete" }
+    requirements: { _method: post|delete }

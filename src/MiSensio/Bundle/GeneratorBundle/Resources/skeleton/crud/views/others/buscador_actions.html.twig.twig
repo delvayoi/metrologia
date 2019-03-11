@@ -1,0 +1,22 @@
+{% set a = "{{ path('" %}
+{% set b = "_buscador') }}" %}
+
+<form id = "formbuscador" action="{{ a }}{{ entity | lower }}{{ b }}" method="get" >                      
+<table>        
+    <tr>
+        <td style="border: 0">
+                    <select id = "selectcampo" class="{{ entity }}id_selector input-medium select2me" name="buscador" >
+                        <option value="0" >Seleccione {{campo}}</option>               
+                           {{ "{% for entity in entities %}"}}                                      
+                             <option value="{{'{{ entity.id }}'}}"> {{ '{{ entity.'~campo~' }}' }} </option>                                                    
+                           {{" {% endfor %} "}}    
+                    </select>                            
+                </td>             
+        <td style="border: 0">
+            <button type="button" onclick="Validar()">Buscar</button>                    
+                </td>
+    </tr>            
+        
+</table>
+</form> 
+   
